@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import LoginImage from "../assets/Icon/LoginImage";
 import Alert from "../components/Alert/Alert";
 import axios from "axios";
@@ -14,6 +14,11 @@ const Login = () => {
     email: null,
     password: null,
   });
+
+
+  useEffect(()=>{
+  window.scrollTo(0,0)
+  },[])
 
   const registerUser = async () => {
     const sendBody = {
