@@ -25,7 +25,7 @@ const Login = () => {
     };
     try {
       const response = await axios.post(
-        "/api/user/login",
+        "https://luxe-lane-backend.vercel.app/api/user/login",
         { ...sendBody },
         { headers: { ...headers } }
       );
