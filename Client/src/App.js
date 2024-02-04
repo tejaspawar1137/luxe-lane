@@ -13,29 +13,12 @@ import About from "./pages/About";
 import Loader from "./components/Loader/Loader";
 import {useSelector} from "react-redux"
 function App() {
-  const [loading, setLoading] = useState(false);
+  
 const authToken= useSelector (state=>state.UserReducer.authToken) 
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = "/assets/Image/bg-1.png";
-    img.onload = () => { 
-      setLoading(false);
-    };
- 
-    img.onerror = () => {
-      setLoading(false);
-    };
-
-    return () => { 
-      setLoading(false)
-      img.onload = null;
-      img.onerror = null;
-    };
-  }, []);
   
   return ( 
-    !loading?<div className=" h-screen">
+    <div className=" h-screen">
       <BrowserRouter>
       <div className="mb-20">
       <Navbar />
@@ -52,11 +35,7 @@ const authToken= useSelector (state=>state.UserReducer.authToken)
         </Routes>
       <Footer/>
       </BrowserRouter>
-    </div> :(
-      <div className="  h-screen flex justify-center items-center">
-             <Loader/>
-      </div>
-    )
+    </div>
   );
 }
 
