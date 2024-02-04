@@ -7,10 +7,7 @@ const orderRoutes=require("./routes/orderRoutes")
 const cors=require("cors")
 const app=express()
  
-app.use(cors({
-    origin:"luxe-lane.vercel.app",
-    methods:["GET","POST","PUT","DELETE"]
-}));
+app.use(cors());
 
 app.use(express.json())
 dotenv.config()
