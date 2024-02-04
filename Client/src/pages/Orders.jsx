@@ -20,7 +20,7 @@ const formatIndianDate = (dateString) => {
 };
 
 const Orders = () => {
-  const apiUrl = "/api/order/user/orders";
+  const apiUrl = "https://luxe-lane-backend.vercel.app/api/order/user/orders";
   const authToken = useSelector((state) => state.UserReducer.authToken);
   const { data, loading } = useApiData(apiUrl, authToken);
 
