@@ -105,7 +105,7 @@ const SingleProduct = () => {
     <div className="flex flex-col py-4 items-center min-h-[80vh] justify-center w-full">
       {/* Product  */}
       {loadingOnApi && (
-        <div className="absolute flex justify-center top-[45%] left-0 w-full">
+        <div className="fixed flex justify-center top-[45%] left-0 w-full">
           <div className=" px-20  py-4 bg-opacity-50 bg-white rounded-sm ">
             <SmallLoader />
           </div>
