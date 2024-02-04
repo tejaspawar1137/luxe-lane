@@ -33,7 +33,7 @@ const CartMenu = ({ setCartMenu, cartMenu, cartMenuLoading }) => {
 
   //Remove product
   const removeCartItem = async (id, cartId) => {
-    const deleteCartItemApiUrl = `/api/user/cart/delete?productid=${id}`;
+    const deleteCartItemApiUrl = `https://luxe-lane-backend.vercel.app/api/user/cart/delete?productid=${id}`;
     const headers = { "content-type": "application/json", token: authToken };
     try {
       const response = await axios.delete(deleteCartItemApiUrl, {
