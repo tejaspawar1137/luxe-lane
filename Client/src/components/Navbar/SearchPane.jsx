@@ -19,7 +19,7 @@ const SearchPane = ({ searchPane, setSearchPane }) => {
     _debounce(async (searchTerm) => {
       if (searchTerm && /[a-zA-Z0-9]/.test(searchTerm)) {
         setLoading(true);
-        const apiUrl = `/api/product?search=${searchTerm}`;
+        const apiUrl = `https://luxe-lane-backend.vercel.app/api/product?search=${searchTerm}`;
         try {
           const response = await axios.get(apiUrl);
           const result = await response.data; 
