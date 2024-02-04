@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import LoginImage from "../assets/Icon/LoginImage";
 import Alert from "../components/Alert/Alert";
 import axios from "axios";
@@ -17,6 +17,11 @@ const Signup = () => {
     password: null,
     confirmPassword:null
   });
+
+
+  useEffect(()=>{
+  window.scrollTo(0,0)
+  },[])
 
   const registerUser = async () => {
     if(formData.password===formData.confirmPassword){
