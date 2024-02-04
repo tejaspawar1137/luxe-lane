@@ -29,6 +29,10 @@ const Orders = () => {
     (a, b) => new Date(b.orderAt) - new Date(a.orderAt)
   );
 
+  useEffect(()=>{
+  window.scrollTo(0,0)
+  },[])
+
   return (
     !loading?<div className="flex min-h-[90vh] flex-col items-center px-2 xs:px-3 sm:px-5 py-8"> 
       {orderedOrders && orderedOrders.length > 0 ? (
