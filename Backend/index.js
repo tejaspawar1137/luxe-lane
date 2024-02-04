@@ -8,7 +8,7 @@ const cors=require("cors")
 const app=express()
  
 app.use(cors({
-    origin:"",
+    origin:"luxe-lane.vercel.app",
     methods:["GET","POST","PUT","DELETE"]
 }));
 
