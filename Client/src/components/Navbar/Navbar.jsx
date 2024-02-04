@@ -28,7 +28,7 @@ const Navbar = () => {
   const authToken = useSelector((state) => state.UserReducer.authToken);
 
   const fetchUser = async () => {
-    const apiUrl = "/api/user/getUser";
+    const apiUrl = "https://luxe-lane-backend.vercel.app/api/user/getUser";
     const headers = { "content-type": "application/json", token: authToken };
     try {
       setCartMenuLoading(true);
