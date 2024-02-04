@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";   
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";   
 import Navbar from "./components/Navbar/Navbar";  
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -11,9 +11,10 @@ import Orders from "./pages/Orders";
 import Footer from "./components/Footer/Footer";
 import About from "./pages/About";
 import Loader from "./components/Loader/Loader";
-
+import {useSelector} from "react-redux"
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+const authToken= useSelector (state=>state.UserReducer.authToken) 
 
   useEffect(() => {
     const img = new Image();
@@ -46,8 +47,8 @@ function App() {
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/placeorder" element={<ConfirmOrder />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/placeorder" element={authToken!==null? <ConfirmOrder />:<Navigate to="/login"/>} />
+          <Route path="/orders" element={authToken!==null? <Orders />:<Navigate to="/login"/>} />
         </Routes>
       <Footer/>
       </BrowserRouter>
