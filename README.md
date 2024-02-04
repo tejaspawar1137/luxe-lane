@@ -16,6 +16,6 @@ Steps to set this up on your pc-
 
     2.) Run the command "npm intall" to install the node_modules
 
-    3.) Run the command "npm run start" to start the frontend server which serves the website frontend.
+    3.) Run the command "npm run start" to start the Client server which serves the website frontend.
 
 The website should now be able to run on your pc.
