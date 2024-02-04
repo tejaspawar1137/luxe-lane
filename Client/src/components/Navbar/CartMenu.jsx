@@ -52,7 +52,7 @@ const CartMenu = ({ setCartMenu, cartMenu, cartMenuLoading }) => {
   const debouncedUpdateQuantity = useMemo(
     () =>
       _debounce(async (id, quantity) => {
-        const updateQuantityApiUrl = `/api/user/cart/update?productid=${id}`;
+        const updateQuantityApiUrl = `https://luxe-lane-backend.vercel.app/api/user/cart/update?productid=${id}`;
         const sendBody = { quantity: quantity };
         const headers = {
           "content-type": "application/json",
