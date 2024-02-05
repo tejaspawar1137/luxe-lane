@@ -28,8 +28,8 @@ const authToken= useSelector (state=>state.UserReducer.authToken)
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<SingleProduct />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={authToken===null? <Login />:<Navigate to="/"/>} />
+          <Route path="/signup" element={authToken===null? <Signup />:<Navigate to="/"/>} />
           <Route path="/placeorder" element={authToken!==null? <ConfirmOrder />:<Navigate to="/login"/>} />
           <Route path="/orders" element={authToken!==null? <Orders />:<Navigate to="/login"/>} />
         </Routes>
