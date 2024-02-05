@@ -6,7 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { setCookie } from "../helpers/Cookie";
 import {useDispatch} from "react-redux";
 import { updateUser } from "../redux/actions/UserAction";
-import SmallLoader from "../components/Loader/SmallLoader
+import SmallLoader from "../components/Loader/SmallLoader";
+
 const Login = () => {
   const dispatch=useDispatch();
   const navigate = useNavigate();
