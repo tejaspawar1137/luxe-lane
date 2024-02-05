@@ -130,7 +130,7 @@ setLoading(false)
                   {!loading? "LOGIN":(<span className="h-5 w-5 border-r border-r-white rounded-full animate-spin"></span>) 
 }  
                   </button>
-                </
+                
               </div>
               <div className="-mx-3 text-sm sm:text-base text-center"/>
                 <Link to="/signup" className="">
