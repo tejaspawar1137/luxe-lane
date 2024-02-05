@@ -131,7 +131,7 @@ setLoading(false)
                   </button>
                 </
               </div>
-              <div className="-mx-3 text-sm sm:text-base text-center">
+              <div className="-mx-3 text-sm sm:text-base text-center"/>
                 <Link to="/signup" className="">
                   Don't have an account?{" "}
                   <span className="underline">Register</span>
