@@ -127,7 +127,8 @@ setLoading(false)
                     type="submit"
                     className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
                   >
-                  {!loading? "LOGIN": <div className=" h-5 w-5 border-r border-r-white rounded-full animate-spin"></div>}  
+                  {!loading? "LOGIN":(<span className="h-5 w-5 border-r border-r-white rounded-full animate-spin"></span>) 
+}  
                   </button>
                 </
               </div>
