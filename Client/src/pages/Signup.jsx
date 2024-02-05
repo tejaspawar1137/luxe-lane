@@ -18,12 +18,13 @@ const Signup = () => {
     confirmPassword:null
   });
 
-
+const [loading,setLoading]=useState(false);
   useEffect(()=>{
   window.scrollTo(0,0)
   },[])
 
   const registerUser = async () => {
+    setLoading(true);
     if(formData.password===formData.confirmPassword){
       const sendBody = {
         name: formData.firstName + formData.lastName,
@@ -47,7 +48,8 @@ const Signup = () => {
         Alert("Registraion succesfull", "success");
       } catch (error) {
         return Alert("Error occured, please try again", "error");
-      }
+      } finally{
+        setLoading(false);
     }else{
      return Alert("Confirm password doesn't match","error")
     }
@@ -194,13 +196,15 @@ const Signup = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex -mx-3">
-                <div className="w-full px-3 mb-[0.5rem]  sm:mb-5">
+ <div className="flex -mx-3">
+                <div className="w-full px-3 mb-5">
                   <button
                     type="submit"
-                    className="block text-sm sm:text-base w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                    className="flex justify-center w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
                   >
-                    REGISTER NOW
+                  {!loading? "REGISTER NOW":(   <div className="h-5 w-5 border-r-[4px] flex justify-center border-r-white rounded-full animate-spin"></div>
+              ) 
+}  
                   </button>
                 </div>
               </div>
