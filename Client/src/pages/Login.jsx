@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { setCookie } from "../helpers/Cookie";
 import {useDispatch} from "react-redux";
 import { updateUser } from "../redux/actions/UserAction";
-
+import SmallLoader from "../components/Loader/SmallLoader
 const Login = () => {
   const dispatch=useDispatch();
   const navigate = useNavigate();
@@ -14,13 +14,14 @@ const Login = () => {
     email: null,
     password: null,
   });
-
+  const [loading, setLoading] = useState(false); 
 
   useEffect(()=>{
   window.scrollTo(0,0)
   },[])
 
   const registerUser = async () => {
+    setLoading(true);
     const sendBody = {
       email: formData.email,
       password: formData.password,
@@ -42,7 +43,9 @@ const Login = () => {
       Alert("Welcome back", "success");
     } catch (error) {
       return Alert("Invalid Credentials", "error");
-    }
+    }finally{
+setLoading(false) 
+}
   };
 
   const handleFormSubmit = (event) => {
@@ -123,7 +126,7 @@ const Login = () => {
                     type="submit"
                     className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
                   >
-                    LOGIN
+                  {!loading? "LOGIN": <SmallLoader/>}  
                   </button>
                 </div>
               </div>
