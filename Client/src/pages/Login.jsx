@@ -125,12 +125,13 @@ setLoading(false)
                 <div className="w-full px-3 mb-5">
                   <button
                     type="submit"
-                    className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                    className="flex justify-center w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
                   >
-                  {!loading? "LOGIN":(<div className="h-5 w-5 border-r border-r-white rounded-full animate-spin"></div>) 
+                  {!loading? "LOGIN":(   <div className="h-5 w-5 border-r-[4px] flex justify-center border-r-white rounded-full animate-spin"></div>
+              ) 
 }  
                   </button>
-                
+                </div>
               </div>
               <div className="-mx-3 text-sm sm:text-base text-center"/>
                 <Link to="/signup" className="">
