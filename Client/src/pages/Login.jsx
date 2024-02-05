@@ -1,26 +1,20 @@
-import React, { useState , useEffect} from "react";
+import React, { useState } from "react";
 import LoginImage from "../assets/Icon/LoginImage";
 import Alert from "../components/Alert/Alert";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { setCookie } from "../helpers/Cookie";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateUser } from "../redux/actions/UserAction";
-import SmallLoader from "../components/Loader/SmallLoader";
 
 const Login = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: null,
     password: null,
   });
-  const [loading, setLoading] = useState(false); 
-
-  useEffect(()=>{
-  window.scrollTo(0,0)
-  },[])
-
+  const [loading, setLoading] = useState(false);
   const registerUser = async () => {
     setLoading(true);
     const sendBody = {
@@ -40,13 +34,13 @@ const Login = () => {
       const authToken = result.data.authToken;
       navigate("/");
       setCookie("authToken", authToken);
-      dispatch(updateUser(authToken))
+      dispatch(updateUser(authToken));
       Alert("Welcome back", "success");
     } catch (error) {
       return Alert("Invalid Credentials", "error");
-    }finally{
-setLoading(false) 
-}
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleFormSubmit = (event) => {
@@ -127,13 +121,15 @@ setLoading(false)
                     type="submit"
                     className="flex justify-center w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
                   >
-                  {!loading? "LOGIN":(   <div className="h-5 w-5 border-r-[4px] flex justify-center border-r-white rounded-full animate-spin"></div>
-              ) 
-}  
+                    {!loading ? (
+                      "LOGIN"
+                    ) : (
+                      <div className="h-6 w-6 border-r-[4px] flex justify-center border-r-white rounded-full animate-spin"></div>
+                    )}
                   </button>
                 </div>
               </div>
-              <div className="-mx-3 text-sm sm:text-base text-center"/>
+              <div className="-mx-3 text-sm sm:text-base text-center">
                 <Link to="/signup" className="">
                   Don't have an account?{" "}
                   <span className="underline">Register</span>
