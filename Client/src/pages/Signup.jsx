@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
 import LoginImage from "../assets/Icon/LoginImage";
 import Alert from "../components/Alert/Alert";
 import axios from "axios";
@@ -18,14 +18,11 @@ const Signup = () => {
     confirmPassword:null
   });
 
-const [loading,setLoading]=useState(false);
-  useEffect(()=>{
-  window.scrollTo(0,0)
-  },[])
+  const [loading, setLoading] = useState(false);
 
   const registerUser = async () => {
-    setLoading(true);
     if(formData.password===formData.confirmPassword){
+      setLoading(true);
       const sendBody = {
         name: formData.firstName + formData.lastName,
         email: formData.email,
@@ -48,8 +45,9 @@ const [loading,setLoading]=useState(false);
         Alert("Registraion succesfull", "success");
       } catch (error) {
         return Alert("Error occured, please try again", "error");
-      } finally{
+      }finally{
         setLoading(false);
+      }
     }else{
      return Alert("Confirm password doesn't match","error")
     }
@@ -196,15 +194,17 @@ const [loading,setLoading]=useState(false);
                   </div>
                 </div>
               </div>
- <div className="flex -mx-3">
-                <div className="w-full px-3 mb-5">
-                  <button
+              <div className="flex -mx-3">
+                <div className="w-full px-3 mb-[0.5rem]  sm:mb-5">
+                <button
                     type="submit"
                     className="flex justify-center w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
                   >
-                  {!loading? "REGISTER NOW":(   <div className="h-5 w-5 border-r-[4px] flex justify-center border-r-white rounded-full animate-spin"></div>
-              ) 
-}  
+                    {!loading ? (
+                      "REGISTER NOW"
+                    ) : (
+                      <div className="h-6 w-6 border-r-[4px] flex justify-center border-r-white rounded-full animate-spin"></div>
+                    )}
                   </button>
                 </div>
               </div>
