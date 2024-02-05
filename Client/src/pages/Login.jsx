@@ -54,7 +54,7 @@ const Login = () => {
     setFormData(tempFormData);
   };
   return (
-    <div className="min-w-screen h-[90vh] bg-gray-200 bg-opacity-75 flex items-center justify-center px-5 py-5">
+   <div className="min-w-screen h-[90vh] bg-gray-200 bg-opacity-75 flex items-center justify-center px-5 py-5">
       <div
         className="bg-white text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
         style={{ maxWidth: "1000px" }}
