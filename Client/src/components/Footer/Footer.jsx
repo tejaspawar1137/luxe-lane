@@ -5,7 +5,7 @@ import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
     <div>
-    <div style={{color:'white'}} className="container p-4 bg-black">
+    <div style={{color:'white'}} className="containerr p-4 bg-black">
       <div className="footer">
         <div className="about">
           <div className="title">About</div>
