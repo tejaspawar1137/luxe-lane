@@ -1,8 +1,8 @@
- .container{
+ .containerr{
     width: 100%;
  }
 
-.container .text {
+.containerr .text {
     font-size: .75rem;
     line-height: 17.5px;
     margin-bottom: 7.5px;
@@ -80,7 +80,7 @@
 
 @media only screen and (max-width: 992px) {
 
-    .container {
+    .containerr {
         margin-bottom: 400px;
     }
 
