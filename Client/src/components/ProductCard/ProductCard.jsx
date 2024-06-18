@@ -17,9 +17,9 @@ const ProductCard = ({ product }) => {
     >
       <div 
           style={{zIndex:0}} className={`bg-red-900 bg-opacity-15 flex justify-center items-center p-2`}>
-        <LazyLoadImage
+        <img
           src={product.image}
-          onLoad={() => setLoading(false)}
+          // onLoad={() => setLoading(false)}
           className="object-contain "
           alt="Not found"
         />
