@@ -33,7 +33,7 @@ const CartMenu = ({ setCartMenu, cartMenu, cartMenuLoading }) => {
 
   //Remove product
   const removeCartItem = async (id, cartId) => {
-    const deleteCartItemApiUrl = `https://luxe-lane-backend.vercel.app/api/user/cart/delete?productid=${id}`;
+    const deleteCartItemApiUrl = `https://luxe-rosy.vercel.app/api/user/cart/delete?productid=${id}`;
     const headers = { "content-type": "application/json", token: authToken };
     try {
       const response = await axios.delete(deleteCartItemApiUrl, {
@@ -52,7 +52,7 @@ const CartMenu = ({ setCartMenu, cartMenu, cartMenuLoading }) => {
   const debouncedUpdateQuantity = useMemo(
     () =>
       _debounce(async (id, quantity) => {
-        const updateQuantityApiUrl = `https://luxe-lane-backend.vercel.app/api/user/cart/update?productid=${id}`;
+        const updateQuantityApiUrl = `https://luxe-rosy.vercel.app/api/user/cart/update?productid=${id}`;
         const sendBody = { quantity: quantity };
         const headers = {
           "content-type": "application/json",

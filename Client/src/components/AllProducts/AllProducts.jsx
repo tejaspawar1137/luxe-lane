@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import Loader from "../Loader/Loader";
 
 const AllProducts = () => {
-  const { data, loading, error } = useApiData("https://luxe-lane-backend.vercel.app/api/product");
+  const { data, loading, error } = useApiData("https://luxe-rosy.vercel.app/api/product");
   const [products, setProducts] = useState(null);
   useEffect(() => {
     if (data !== null) { 

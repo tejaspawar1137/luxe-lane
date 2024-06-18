@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const apiUrl = "https://luxe-lane-backend.vercel.app/api/user/getUser";
+      const apiUrl = "https://luxe-rosy.vercel.app/api/user/getUser";
       const headers = { "content-type": "application/json", token: authToken };
       try {  
         const response = await axios.get(apiUrl, { headers: { ...headers } });

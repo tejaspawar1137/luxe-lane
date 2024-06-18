@@ -29,7 +29,7 @@ const ConfirmOrderPage = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const apiUrl = "https://luxe-lane-backend.vercel.app/api/user/getUser";
+      const apiUrl = "https://luxe-rosy.vercel.app/api/user/getUser";
       const headers = { "content-type": "application/json", token: authToken };
       try {
         setLoading(true);
@@ -75,7 +75,7 @@ const ConfirmOrderPage = () => {
 
   const addAddress = async (event) => {
     event.preventDefault();
-    const addAddressApiUrl = `https://luxe-lane-backend.vercel.app/api/user/update`;
+    const addAddressApiUrl = `https://luxe-rosy.vercel.app/api/user/update`;
     if (authToken !== null) {
       setLoadingOnApi(true);
       const sendBody = { address: addressToBeAdded }; 
@@ -104,7 +104,7 @@ const ConfirmOrderPage = () => {
 
   const placeOrder= async ()=>{
     if(address.length>0){
-      const placeOrderApiUrl = `https://luxe-lane-backend.vercel.app/api/order/checkout`; 
+      const placeOrderApiUrl = `https://luxe-rosy.vercel.app/api/order/checkout`; 
         setLoadingOnApi(true);
         const sendBody = { address: address[0],totalPrice:totalCartPrice }; 
         const headers = { "content-type": "application/json", token: authToken };

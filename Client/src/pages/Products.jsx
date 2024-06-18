@@ -18,10 +18,10 @@ const Categories = () => {
   const products = useSelector((state) => state.CategoriesReducer.products);
   const apiUrl = `${
     category
-      ? `https://luxe-lane-backend.vercel.app/api/product?category=${category}`
+      ? `https://luxe-rosy.vercel.app/api/product?category=${category}`
       : search
-      ? `https://luxe-lane-backend.vercel.app/api/product?search=${search}`
-      : "https://luxe-lane-backend.vercel.app/api/product"
+      ? `https://luxe-rosy.vercel.app/api/product?search=${search}`
+      : "https://luxe-rosy.vercel.app/api/product"
   }`;
   const { data } = useApiData(apiUrl);
   const [loader, setloader] = useState(false);

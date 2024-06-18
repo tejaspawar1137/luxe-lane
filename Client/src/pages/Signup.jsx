@@ -33,7 +33,7 @@ const Signup = () => {
       };
       try {
         const response = await axios.post(
-          "https://luxe-lane-backend.vercel.app/api/user/signup",
+          "https://luxe-rosy.vercel.app/api/user/signup",
           { ...sendBody },
           { headers: { ...headers } }
         );

@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "proxy": "https://luxe-lane-backend.vercel.app",
+  "proxy": "https://luxe-rosy.vercel.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

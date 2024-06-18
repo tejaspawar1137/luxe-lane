@@ -32,8 +32,8 @@ const SingleProduct = () => {
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
 
-  const apiUrl = `https://luxe-lane-backend.vercel.app/api/product/${id}`;
-  const relatedProductsApiUrl = `https://luxe-lane-backend.vercel.app/api/product?category=${category}`;
+  const apiUrl = `https://luxe-rosy.vercel.app/api/product/${id}`;
+  const relatedProductsApiUrl = `https://luxe-rosy.vercel.app/api/product?category=${category}`;
 
   const authToken = useSelector((state) => state.UserReducer.authToken);
   const { data, loading } = useApiData(apiUrl);
@@ -50,7 +50,7 @@ const SingleProduct = () => {
   };
 
   const addProductToCart = async () => {
-    const addToCartApiUrl = `https://luxe-lane-backend.vercel.app/api/order/user/orders/${id}`;
+    const addToCartApiUrl = `https://luxe-rosy.vercel.app/api/order/user/orders/${id}`;
     if (authToken !== null) {
       setLoadingOnApi(true);
       const sendBody = { quantity: quantity };
